@@ -6,6 +6,8 @@ import {
   NunitoSans_700Bold,
   useFonts,
 } from "@expo-google-fonts/nunito-sans";
+import { ThemeProvider } from "styled-components/native";
+import theme from "@/theme";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -18,10 +20,12 @@ export default function App() {
   }
 
   return (
-    <Teste style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </Teste>
+    <ThemeProvider theme={theme}>
+      <Teste style={styles.container}>
+        <Text>Open up App.tsx to start working on your app!</Text>
+        <StatusBar style="auto" />
+      </Teste>
+    </ThemeProvider>
   );
 }
 
