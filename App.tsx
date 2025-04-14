@@ -8,6 +8,8 @@ import {
 } from "@expo-google-fonts/nunito-sans";
 import { ThemeProvider } from "styled-components/native";
 import theme from "@/theme";
+import { Button } from "@/components/Button";
+import { PencilSimpleLine } from "phosphor-react-native";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -23,6 +25,12 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <Teste style={styles.container}>
         <Text>Open up App.tsx to start working on your app!</Text>
+        <Button
+          variant="secondary"
+          title="Teste"
+          icon={PencilSimpleLine}
+          onPress={() => console.log("Button pressed")}
+        />
         <StatusBar style="auto" />
       </Teste>
     </ThemeProvider>
