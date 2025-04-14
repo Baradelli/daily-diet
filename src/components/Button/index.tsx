@@ -7,7 +7,7 @@ import { useEffect, useRef } from "react";
 
 interface ButtonProps extends TouchableOpacityProps {
   variant?: "primary" | "secondary";
-  icon: PhosporIcon;
+  icon?: PhosporIcon;
   title: string;
 }
 
@@ -55,7 +55,9 @@ export const Button = ({
       onPressOut={handlePressOut}
       activeOpacity={1}
     >
-      <Icon as={IconComponent} variant={variant} size={theme.FONT_SIZE.LG} />
+      {IconComponent && (
+        <Icon as={IconComponent} variant={variant} size={theme.FONT_SIZE.LG} />
+      )}
       <Title variant={variant}>{title}</Title>
     </AnimatedContainer>
   );
